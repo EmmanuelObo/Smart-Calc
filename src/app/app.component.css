@@ -7,10 +7,12 @@
   height: 50px;
   font-size: 43px;
   text-align: center;
+  font-family: 'Rajdhani', Arial, sans-serif;
 }
 
 .results{
   font-size: 25px;
+  font-family: 'Exo', Arial, sans-serif;
 }
 
 textarea:focus, input:focus{

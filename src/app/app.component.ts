@@ -55,9 +55,8 @@ export class AppComponent {
         {
           total *= +values[index+1];
         }
-         
       }
-    return total;
+    return (isNaN(total) ? 'Calculating...' : '=  ' + total);
   }
 
   readable(input)
