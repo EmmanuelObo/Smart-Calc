@@ -1,12 +1,12 @@
 # Smart Calc
 
-*A quick, efficient & smart way to make calculations all in a single line input format!
+**A quick, efficient & smart way to make calculations all in a single line input format!
 
-*Created using Angular 4
+**Created using Angular 4
 
 
-#Credits
+##Credits
 
-*Angular Team
+**Angular Team
 
-*Angular CLI
+**Angular CLI
