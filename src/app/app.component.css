@@ -1,5 +1,5 @@
 .app-title{
-  font-family: 'Candara', 'Tahoma', sans-serif; 
+  font-family: 'Quicksand', 'Tahoma', sans-serif; 
 }
 
 .input-box{
@@ -11,4 +11,8 @@
 
 .results{
   font-size: 25px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
