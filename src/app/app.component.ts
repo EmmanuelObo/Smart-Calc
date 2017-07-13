@@ -7,30 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Smart Calc v1';
-  four:number = 4;
-  three:number = 3;
-  result:number = this.three + this.four;
-
-  talk(){
-    let words:string = "Hello World";
-    return words;
-  }
-
-  test(){
-    console.log('TESTING EVENT BINDING')
-  }
-
-  hello:string = this.talk();
-
-  addFive(value){
-
-    if(value=='Emmanuel')
-       return 'Hey Thats Me!'
-
-     value = +value
-
-     return value+5;
-  }
 
   calculation(value)
   {
@@ -72,18 +48,6 @@ export class AppComponent {
     commentary += ' )'
 
     return commentary;
-  }
-
-  operator(sign){
-    if(sign=='+' || 
-      sign=='-' ||
-      sign=='/' ||
-      sign=='-')
-    {
-      return true;
-    }
-    else
-      return false;
   }
 
 }
