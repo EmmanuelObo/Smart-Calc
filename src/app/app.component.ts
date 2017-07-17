@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitheCalcService } from './service/tithecalc.service';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,25 @@ import { TitheCalcService } from './service/tithecalc.service';
   providers: [TitheCalcService]
 })
 export class AppComponent{
-  constructor(private tithe: TitheCalcService){}
+  constructor(private tithe: TitheCalcService, private http: Http){}
 
   title = 'Smart Calc v1';
   imgPath = './assets/SmartCalcLogo.svg';
   myTithe;
+  httpData;
 
   getTithe(input:any)
   {
     this.myTithe = this.tithe.calculate(input);
+  }
+
+  getHTTP()
+  {
+    this.http.get('http://127.0.0.1:8000/api/v1/list').subscribe(data => 
+    {
+      console.log(data);
+      this.httpData = data;
+    })  
   }
 
   calculation(input:any)

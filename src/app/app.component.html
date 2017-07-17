@@ -12,7 +12,10 @@
 <p class="results">{{calculation(results)}}</p>
 
 <button (click)="getTithe(results);">Calculate Tithe</button>
+<button (click)="getHTTP();">Get HTTP Data</button>
 
 <p *ngIf="myTithe">Tithe: {{myTithe}}</p>
+
+<h1>{{httpData}}</h1>
 
 </div>
