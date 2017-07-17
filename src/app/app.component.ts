@@ -1,43 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TitheCalcService } from './service/tithecalc.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TitheCalcService]
 })
-export class AppComponent {
+export class AppComponent{
+  constructor(private tithe: TitheCalcService){}
+
   title = 'Smart Calc v1';
   imgPath = './assets/SmartCalcLogo.svg';
+  myTithe;
 
-
-  calculation(value)
+  getTithe(input:any)
   {
-    var values = value.split(" ");
-    var total = +values[0]
+    this.myTithe = this.tithe.calculate(input);
+  }
 
-    for(var index = 1 ; index < values.length ; index++)
+  calculation(input:any)
+  {
+    var inputs = input.split(" ");
+    var total = +inputs[0]
+
+    for(var index = 1 ; index < inputs.length ; index++)
       {  
-        if(values[index]=='+')
+        if(inputs[index]=='+')
         {
-          total += +values[index+1];
+          total += +inputs[index+1];
         }
-        else if(values[index]=='-')
+        else if(inputs[index]=='-')
         {
-          total -= +values[index+1];
+          total -= +inputs[index+1];
         }
-        else if(values[index]=='/')
+        else if(inputs[index]=='/')
         {
-          total /= +values[index+1];
+          total /= +inputs[index+1];
         }
-        else if(values[index]=='*')
+        else if(inputs[index]=='*')
         {
-          total *= +values[index+1];
+          total *= +inputs[index+1];
         }
       }
     return (isNaN(total) ? 'Calculating...' : '=  ' + total);
   }
 
-  readable(input)
+  readable(input:any)
   {
     var inputList = input.split(" ");
     var commentary = '( ';
@@ -51,5 +60,4 @@ export class AppComponent {
 
     return commentary;
   }
-
 }

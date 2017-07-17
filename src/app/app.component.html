@@ -10,4 +10,9 @@
 <br>
 
 <p class="results">{{calculation(results)}}</p>
+
+<button (click)="getTithe(results);">Calculate Tithe</button>
+
+<p *ngIf="myTithe">Tithe: {{myTithe}}</p>
+
 </div>
